@@ -131,7 +131,7 @@ void CreateImageFile(char *property, char *pic_file_name, char *destfilename, ch
 	
 	strcpy(property, proj_directory);
 		chdir(proj_directory);
-		mkdir("pixmaps", 0644);
+		mkdir("pixmaps", 0755);
 /* Create .gladep file*/
 					char proj_file[20];
 					strcpy(proj_file,  proj_directory);
@@ -151,7 +151,7 @@ void CreateImageFile(char *property, char *pic_file_name, char *destfilename, ch
 
 
 		chdir("..");
-	strcat(property, "\\pixmaps\\");
+	strcat(property, "/pixmaps/");
 
 	strcat(property, destfn);
     strcpy(pic_file_name, destfn);

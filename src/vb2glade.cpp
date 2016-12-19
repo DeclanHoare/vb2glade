@@ -104,10 +104,10 @@ int main(int argc, char* argv[])
 
 	char proj_directory[100];
 	strcpy(proj_directory,outfn);
-	mkdir(outfn, 0644);
+	mkdir(outfn, 0755);
 	
 
-	strcat(outfn, "\\");	
+	strcat(outfn, "/");	
 	strcat(outfn,argv[1]);
 	outfn[strlen(outfn)-4]='\0';
 	strcat(outfn,".glade");
@@ -248,7 +248,7 @@ if(Determine_whether_there_is_a_menu(string,length_of_file))
 			{
 				char nopic_path[100];
 				strcpy(nopic_path,proj_directory);
-				strcat(nopic_path,"\\pixmaps\\nopicture.xpm");
+				strcat(nopic_path,"/pixmaps/nopicture.xpm");
 				ofstream nopic(nopic_path);
 				nopic.close();
 				OutputImage(outfile, name[x], wd[x], ht[x], xcoord[x], ycoord[x], "nopicture.xpm");
