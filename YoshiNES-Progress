@@ -1,0 +1,14 @@
+frmAbout.frm: 3x "Widget undetectable", reports success, but incomplete file
+frmConfig.frm: Segfaults immediately, empty file
+frmDebug.frm: 1x "Widget undetectable", followed by segfault & empty file
+frmGameGenie.frm: 2x "Widget undetectable", complete file
+frmHexView.frm: 1x "Widget undetectable", followed by segfault & empty file
+frmKeys.frm: Segfaults immediately, empty file
+frmMakePal.frm: 1x "Nested frames not supported", complete file
+frmMidi.frm: Complete file
+frmNES.frm: 1x "The menu widget comes now", djpeg usage message, free() invalid size, backtrace, aborted (core dumped), 2 empty files & one complete file
+frmPattern.frm: Complete file
+frmRamEditor.frm: 1x "Nested frames not supported", folowed by segfault & empty file
+frmRender.frm: Reports success, but incomplete file
+frmROMInfo.frm: 1x "Widget undetectable", reports success, but incomplete file
+frmVPal.frm: Segfaults immediately, empty file
