@@ -17,8 +17,3 @@ I was initially quite happy to see that the Linux binary did not crash like the 
 version did when I ran it on the test file... until I looked in the output file and
 realised that it still created an incomplete file. So, this program is still buggy and
 needs to be fixed so that it will create a complete XML file.
-
-Also, the directory delimiter is hardcoded. As a result, the program will happily produce
-a completely empty directory and write a file with a backslash in the name next to it. I
-tried changing the hardcoded directory delimiter to /, but this gave me absolutely no
-output file at all, so I changed it back for now.
