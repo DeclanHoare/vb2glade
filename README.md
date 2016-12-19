@@ -13,7 +13,6 @@ and run:
 
 ##Todo
 
-I was initially quite happy to see that the Linux binary did not crash like the Windows
-version did when I ran it on the test file... until I looked in the output file and
-realised that it still created an incomplete file. So, this program is still buggy and
-needs to be fixed so that it will create a complete XML file.
+This program is still quite buggy. My test input is the Forms directory from YoshiNES.
+So far, the results have been inconsistent. Further details will be provided on the
+issue tracker.
