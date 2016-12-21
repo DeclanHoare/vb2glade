@@ -6,10 +6,19 @@ and presumably every other platform with a GNU userland available.
 
 ##Building
 
-I will set up an Autotools build system soon, but for now, enter the "src" directory
-and run:
+Generate a configure script by running:
 
-`g++ *.cpp -o vb2glade`
+`autoreconf -i`
+
+Then run
+
+`./configure; make`
+
+to compile the program. You can also run
+
+`make install`
+
+as root to install it system-wide.
 
 ##Todo
 
