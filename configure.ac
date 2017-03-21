@@ -24,4 +24,5 @@ AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([1.11 -Wall foreign])
 AC_CONFIG_FILES([Makefile])
 AC_PROG_CXX
+AX_APPEND_COMPILE_FLAGS([-Wall -Wextra -Werror], [CXXFLAGS])
 AC_OUTPUT

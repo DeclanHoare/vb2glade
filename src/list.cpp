@@ -152,7 +152,6 @@ int Create_and_store_List(char *sourcefilename, char *listaddr, char *listname, 
 {
 	long llistaddr=address_convert(listaddr);
 	FILE *src;
-	char **list=(char**)malloc(100000);
 	
 	src=fopen(sourcefilename,"rb");
 		long fsize=filesize(src);

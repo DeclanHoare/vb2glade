@@ -47,7 +47,6 @@ int main(int argc, char* argv[])
 	FILE *test_file;
 	char buffer[10000];
 	char *string= (char*)malloc(sizeof(int)*100000);
-	char *temp= (char*)malloc(sizeof(int)*100000);
 	int x,y;
 	
 	
@@ -167,10 +166,7 @@ if(Determine_whether_there_is_a_menu(string,length_of_file))
 	// for list
 	char *sourcefilename=(char*)malloc(1000);
 	char *address=(char*)malloc(1000);
-	char *f_sourcefilename=(char*)malloc(1000);
-	char *f_address=(char*)malloc(1000);
 	char *list_property=(char*)malloc(1000);
-	char *f_list_property=(char*)malloc(1000);
 	int list_item_no=0;
 	int no_of_list_items=0;
 	int list_loop_f=0;
@@ -195,7 +191,7 @@ if(Determine_whether_there_is_a_menu(string,length_of_file))
 		}
 
 		else if (!(strcmp("TextBox", type[x])))
-			OutputEntry(outfile, name[x], wd[x], ht[x], caption[x], text[x], xcoord[x], ycoord[x]);
+			OutputEntry(outfile, name[x], wd[x], ht[x], text[x], xcoord[x], ycoord[x]);
 		else if (!(strcmp("Label", type[x])))
 			OutputLabel(outfile, name[x], wd[x], ht[x], xcoord[x], ycoord[x], caption[x]);
 		else if (!(strcmp("CheckBox", type[x])))
@@ -209,7 +205,7 @@ if(Determine_whether_there_is_a_menu(string,length_of_file))
 		{
 				list_property=GetListProperties (string, z, length_of_file);
 
-				if (list_property != NULL)
+					if (list_property != NULL)
 					for (list_loop_f=1; list_loop_f<int(strlen(list_property)); list_loop_f++)
 						{
 							if (list_property[list_loop_f] == '\"')
@@ -227,7 +223,7 @@ if(Determine_whether_there_is_a_menu(string,length_of_file))
  								
 					//cout<<endl<<"Width is: "<<wd[x]<<endl;
 					OutputCombo(outfile, name[x], wd[x], ht[x], 
-									xcoord[x], ycoord[x], text[x], no_of_list_items);
+									text[x]);
 					Process_and_Output_List_from_file (outfile, name[x], 
 													no_of_list_items, list_item_no);
 
@@ -258,8 +254,7 @@ if(Determine_whether_there_is_a_menu(string,length_of_file))
 
  		else if (!(strcmp("Frame", type[x])))
  		{
- 			OutputFrame(outfile, name[x], wd[x], ht[x], xcoord[x], 
- 										ycoord[x], caption[x], fixed_no);
+ 			OutputFrame(outfile, name[x], wd[x], ht[x], fixed_no);
  			
  			int no_of_childs = 0;  
  			for (int p=starting[x]; p<length_of_file; p++)
@@ -290,7 +285,7 @@ if(Determine_whether_there_is_a_menu(string,length_of_file))
  							else if (!(strcmp("OptionButton", type[x+y])))
  								OutputRadio(outfile, name[x+y], wd[x+y], ht[x+y], caption[x+y], xcoord[x+y], ycoord[x+y]);
  							else if (!(strcmp("TextBox", type[x+y])))
- 								OutputEntry(outfile, name[x+y], wd[x+y], ht[x+y], caption[x+y], text[x+y], xcoord[x+y], ycoord[x+y]);
+ 								OutputEntry(outfile, name[x+y], wd[x+y], ht[x+y], text[x+y], xcoord[x+y], ycoord[x+y]);
  							else if (!(strcmp("Label", type[x+y])))
  								OutputLabel(outfile, name[x+y], wd[x+y], ht[x+y], xcoord[x+y], ycoord[x+y], caption[x+y]);
  							else if (!(strcmp("CheckBox", type[x+y])))
@@ -323,8 +318,7 @@ if(Determine_whether_there_is_a_menu(string,length_of_file))
 								if (list_property == NULL)
 									no_of_list_items=0;
  								
-								OutputCombo(outfile, name[x+y], wd[x+y], ht[x+y], 
- 												xcoord[x+y], ycoord[x+y], text[x+y], no_of_list_items);
+								OutputCombo(outfile, name[x+y], wd[x+y], ht[x+y], text[x+y]);
  								Process_and_Output_List_from_file (outfile, name[x+y], 
  														no_of_list_items, list_item_no);
 
@@ -334,14 +328,14 @@ if(Determine_whether_there_is_a_menu(string,length_of_file))
 	 						else if (!(strcmp("PictureBox", type[x+y])))
  							{
  								picture=GetPictureProperties (string, z, length_of_file);
- 								CreateImageFile (picture, "", name[x+y],proj_directory);
+ 								CreateImageFile (picture, nullptr, name[x+y],proj_directory);
  								OutputImage(outfile, name[x+y], wd[x+y], ht[x+y], xcoord[x+y], ycoord[x+y], picture);
 							}
  							else
  								cout<<"Widget undetectable ....: " <<type[x+y]<<"\n";
  
  			}
- 			OutputFrameContd(outfile, name[x], wd[x], ht[x], xcoord[x], ycoord[x], caption[x]);
+ 			OutputFrameContd(outfile, xcoord[x], ycoord[x], caption[x]);
  			x=x+y;
 
 		

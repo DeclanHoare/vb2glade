@@ -76,7 +76,7 @@ int isBmp (char *filename)
 }
 
 
-void CreateImageFile(char *property, char *pic_file_name, char *destfilename, char *proj_directory)
+void CreateImageFile(char *property, char* pic_file_name, const char* destfilename, const char* proj_directory)
 {
 	char *address=(char*)malloc(sizeof(char)*4);
 	char *sourcefilename=(char*)malloc(sizeof(char)*256);
@@ -154,11 +154,9 @@ void CreateImageFile(char *property, char *pic_file_name, char *destfilename, ch
 	strcat(property, "/pixmaps/");
 
 	strcat(property, destfn);
-    strcpy(pic_file_name, destfn);
+    if (pic_file_name != nullptr) strcpy(pic_file_name, destfn);
 
 	strcat(convert_command, property);
 	system(convert_command);
-
-	free (convert_command);
 
 }

@@ -18,4 +18,4 @@
  */
 
 //void CreateImageFile(char *property, char *destfilename, char *proj_directory);
-void CreateImageFile(char *property, char *pic_file_name, char *destfilename, char *proj_directory);
+void CreateImageFile(char* property, char* pic_file_name, const char* destfilename, const char* proj_directory);

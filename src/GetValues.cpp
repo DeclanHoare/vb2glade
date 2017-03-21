@@ -27,13 +27,6 @@
 #include "string.h"
 #include "icstring.h"
 
-char * ltoa ( long value, char * str, int base );
-
-char * ltoa ( long value, char * str, int base )
-{
-	sprintf(str,"%d",(int) value);
-}
-
 char *getCaption (char *string, int start_of_search, int length_of_file)
 {
 	char *final;
@@ -131,7 +124,7 @@ char *getClientWidth (char *string, int start_of_search, int length_of_file)
 						width1=long(strtod(final,&temp));
 						width1/=15;
 
-						ltoa(width1, final, 10);
+						sprintf(final, "%ld", width1);
 
 						return final;
 					}
@@ -154,7 +147,7 @@ char *getClientHeight (char *string, int start_of_search, int length_of_file)
 						height=long(strtod(final,&temp));
 						height/=15;
 
-						ltoa(height, final, 10);
+						sprintf(final, "%ld", height);
 
 						return final;
 					}
@@ -178,7 +171,7 @@ char *getHeight (char *string, int start_of_search, int length_of_file)
 						height=long(strtod(final,&temp));
 						height/=15;
 
-						ltoa(height, final, 10);
+						sprintf(final, "%ld", height);
 
 						return final;
 					}
@@ -202,7 +195,7 @@ char *getWidth (char *string, int start_of_search, int length_of_file)
 						width1=long(strtod(final,&temp));
 						width1/=15;
 
-						ltoa(width1, final, 10);
+						sprintf(final, "%ld", width1);
 
 						return final;
 					}
@@ -225,7 +218,7 @@ char *getTop (char *string, int start_of_search, int length_of_file)
 						width1=long(strtod(final,&temp));
 						width1/=15;
 
-						ltoa(width1, final, 10);
+						sprintf(final, "%ld", width1);
 
 						return final;
 					}
@@ -248,7 +241,7 @@ char *getLeft (char *string, int start_of_search, int length_of_file)
 						width1=long(strtod(final,&temp));
 						width1/=15;
 
-						ltoa(width1, final, 10);
+						sprintf(final, "%ld", width1);
 
 						return final;
 					}
@@ -287,8 +280,7 @@ GetAllProperties (int widgetno, int starting, int end, char *string, char **type
 {
 	int type_done=0;
 	int name_done=0;
-	int caption_done=0;
-	int this_pos;
+	int this_pos=0;
 	int x,y;
 
 	// For type

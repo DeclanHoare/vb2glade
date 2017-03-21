@@ -23,30 +23,28 @@
 #include "list.h"
 
 
-void OutputRadio(ofstream& outfile, char *name, char *wd, char *ht, char* caption,
-				 char *xcoord, char *ycoord);
-void OutputButton(ofstream& outfile,char *name, char *wd, char *ht, char* caption,
-				 char *xcoord, char *ycoord);
-void OutputEntry(ofstream& outfile,char *name, char *wd, char *ht, char* caption, char *text,
-				 char *xcoord, char *ycoord);
-void OutputImage(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *filename);
-/*void OutputLabel(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *caption);*/
+void OutputRadio(ofstream& outfile, const char* name, const char* wd, const char* ht, char* caption,
+				 const char* xcoord, const char* ycoord);
+void OutputButton(ofstream& outfile,const char* name, const char* wd, const char* ht, char* caption,
+				 const char* xcoord, const char* ycoord);
+void OutputEntry(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* text,
+				 const char* xcoord, const char* ycoord);
+void OutputImage(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord, const char* filename);
+/*void OutputLabel(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord, const char* caption);*/
 
-void OutputLabel(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *caption);
-void OutputCheck(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *caption);
-void OutputFrame(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *caption,int&);
-void OutputFrameContd(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *caption);
-void OutputHscroll(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord);
-void OutputVscroll(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord);
-
-void OutputCombo(ofstream& outfile, char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *text, int no_of_array_items);
-void OutputComboContd(ofstream& outfile, char *xcoord, char *ycoord);
+void OutputLabel(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord, const char* caption);
+void OutputCheck(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord, const char* caption);
+void OutputFrame(ofstream& outfile,const char* name, const char* wd, const char* ht,
+				 int& fixed_no);
+void OutputFrameContd(ofstream& outfile, const char* xcoord,
+				 const char* ycoord, const char* caption);
+void OutputHscroll(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord);
+void OutputVscroll(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord);
+void OutputCombo(ofstream& outfile, const char* name, const char* wd, const char* ht, const char* text);
+void OutputComboContd(ofstream& outfile, const char* xcoord, const char* ycoord);

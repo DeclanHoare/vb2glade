@@ -26,8 +26,8 @@ using namespace std;
 #include "list.h"
 
 
-void OutputFrame(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *caption, int& fixed_no)
+void OutputFrame(ofstream& outfile,const char* name, const char* wd, const char* ht,
+				 int& fixed_no)
 {
 
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
@@ -46,8 +46,8 @@ void OutputFrame(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
 			/* Enter child code here */
 }
 
-void OutputFrameContd(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *caption)
+void OutputFrameContd(ofstream& outfile, const char* xcoord,
+				 const char* ycoord, const char* caption)
 {
 		outfile<<"</widget>"<<"\n\n"<<"\t\t\t\t\t";	
 		outfile<<"</child>"<<"\n\n"<<"\t\t\t\t\t";
@@ -84,8 +84,7 @@ void OutputFrameContd(ofstream& outfile,char *name, char *wd, char *ht, char *xc
 }
 
 
-void OutputCombo(ofstream& outfile, char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *text, int no_of_array_items)
+void OutputCombo(ofstream& outfile, const char* name, const char* wd, const char* ht, const char* text)
 {
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
 	outfile<<"<widget class=\""<<"GtkCombo"<<"\" id=\""<<name<<"\">"<<"\n"<<"\t\t\t\t\t";
@@ -121,7 +120,7 @@ void OutputCombo(ofstream& outfile, char *name, char *wd, char *ht, char *xcoord
 }
 
 
-void OutputComboContd(ofstream& outfile, char *xcoord, char *ycoord)
+void OutputComboContd(ofstream& outfile, const char* xcoord, const char* ycoord)
 {
 			outfile<<"\n\t\t\t\t\t";
 			outfile<<"</widget>"<<"\n"<<"\t\t\t\t\t\t";
@@ -137,8 +136,8 @@ void OutputComboContd(ofstream& outfile, char *xcoord, char *ycoord)
 }
 
 
-void OutputHscroll(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord)
+void OutputHscroll(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord)
 {
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
 	outfile<<"<widget class=\""<<"GtkHScrollbar"<<"\" id=\""<<name<<"\">"<<"\n"<<"\t\t\t\t\t";
@@ -159,8 +158,8 @@ void OutputHscroll(ofstream& outfile,char *name, char *wd, char *ht, char *xcoor
 
 }
 
-void OutputVscroll(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord)
+void OutputVscroll(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord)
 {
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
 	outfile<<"<widget class=\""<<"GtkVScrollbar"<<"\" id=\""<<name<<"\">"<<"\n"<<"\t\t\t\t\t";
@@ -184,8 +183,8 @@ void OutputVscroll(ofstream& outfile,char *name, char *wd, char *ht, char *xcoor
 
 
 
-void OutputCheck(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *caption)
+void OutputCheck(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord, const char* caption)
 {
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
 	outfile<<"<widget class=\""<<"GtkCheckButton"<<"\" id=\""<<name<<"\">"<<"\n"<<"\t\t\t\t\t";
@@ -211,8 +210,8 @@ void OutputCheck(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
 }
 
 
-void OutputLabel(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
-				 char *ycoord, char *caption)
+void OutputLabel(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord,
+				 const char* ycoord, const char* caption)
 {
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
 	outfile<<"<widget class=\""<<"GtkLabel"<<"\" id=\""<<name<<"\">"<<"\n"<<"\t\t\t\t\t";
@@ -243,8 +242,8 @@ void OutputLabel(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord,
 }
 
 
-void OutputRadio(ofstream& outfile, char *name, char *wd, char *ht, char* caption,
-				 char *xcoord, char *ycoord)
+void OutputRadio(ofstream& outfile, const char* name, const char* wd, const char* ht, char* caption,
+				 const char* xcoord, const char* ycoord)
 {
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
 	outfile<<"<widget class=\""<<"GtkRadioButton"<<"\" id=\""<<name<<"\">"<<"\n"<<"\t\t\t\t\t";
@@ -267,8 +266,8 @@ void OutputRadio(ofstream& outfile, char *name, char *wd, char *ht, char* captio
 }
 
 
-void OutputButton(ofstream& outfile,char *name, char *wd, char *ht, char* caption,
-				 char *xcoord, char *ycoord)
+void OutputButton(ofstream& outfile,const char* name, const char* wd, const char* ht, char* caption,
+				 const char* xcoord, const char* ycoord)
 {
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
 	outfile<<"<widget class=\""<<"GtkButton"<<"\" id=\""<<name<<"\">"<<"\n"<<"\t\t\t\t\t";
@@ -289,8 +288,8 @@ void OutputButton(ofstream& outfile,char *name, char *wd, char *ht, char* captio
 }
 
 
-void OutputEntry(ofstream& outfile,char *name, char *wd, char *ht, char* caption, char *text,
-				 char *xcoord, char *ycoord)
+void OutputEntry(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* text,
+				 const char* xcoord, const char* ycoord)
 {
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
 	outfile<<"<widget class=\""<<"GtkEntry"<<"\" id=\""<<name<<"\">"<<"\n"<<"\t\t\t\t\t";
@@ -317,7 +316,7 @@ void OutputEntry(ofstream& outfile,char *name, char *wd, char *ht, char* caption
 	outfile<<"</child>"<<"\n\n"; 
 }
       
-void OutputImage(ofstream& outfile,char *name, char *wd, char *ht, char *xcoord, char *ycoord, char *filename)
+void OutputImage(ofstream& outfile,const char* name, const char* wd, const char* ht, const char* xcoord, const char* ycoord, const char* filename)
 {
 	outfile<<"\t\t\t<child>"<<"\n"<<"\t\t\t\t";
 	outfile<<"<widget class=\""<<"GtkImage"<<"\" id=\""<<name<<"\">"<<"\n"<<"\t\t\t\t\t";
